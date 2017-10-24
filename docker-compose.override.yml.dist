@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: root-passwd
+      MYSQL_DATABASE: database-name
+      MYSQL_USER: db-user
+      MYSQL_PASSWORD: db-user-passwd
+  apache:
+    environment:
+      APP_DOMAIN: vhost-app-name
+      APP_DOC_ROOT: /var/www/web
+      APACHE_SERVERNAME: apache-servername
+      FPM_ALIAS: php-fpm-alias
