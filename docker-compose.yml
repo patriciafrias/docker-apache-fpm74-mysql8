@@ -17,6 +17,10 @@ services:
     image: mysql:5.7
     environment:
       BIND_ADDRESS: 0.0.0.0
+      MYSQL_ROOT_PASSWORD: pfm
+      MYSQL_DATABASE: pfm
+      MYSQL_USER: pfm
+      MYSQL_PASSWORD: pfm
     networks:
       docker_network:
         aliases:
@@ -50,6 +54,10 @@ services:
       APACHE_RUN_DIR: /var/run/apache2
       APACHE_LOCK_DIR: /var/lock/apache2
       APACHE_LOG_DIR: /var/log/apache2
+      APP_DOMAIN: pfm-app
+      APP_DOC_ROOT: /var/www/public
+      APACHE_SERVERNAME: pfm-server
+      FPM_ALIAS: fpm
     ports:
       - 80:80
       - 443:443

@@ -9,7 +9,7 @@ services:
       MYSQL_PASSWORD: pfm
   apache:
     environment:
-      APP_DOMAIN: vhost-app-name
+      APP_DOMAIN: pfm-app
       APP_DOC_ROOT: /var/www/public
       APACHE_SERVERNAME: pfm-server
       FPM_ALIAS: fpm
