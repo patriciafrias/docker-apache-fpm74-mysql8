@@ -14,13 +14,13 @@ networks:
 
 services:
   mysql:
-    image: mysql:5.7
+    image: mysql:8.0
     environment:
       BIND_ADDRESS: 0.0.0.0
-      MYSQL_ROOT_PASSWORD: pfm
-      MYSQL_DATABASE: pfm
-      MYSQL_USER: pfm
-      MYSQL_PASSWORD: pfm
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     networks:
       docker_network:
         aliases:
@@ -38,7 +38,7 @@ services:
     networks:
       docker_network:
         aliases:
-          - php-fpm
+          - fpm
         ipv4_address: 172.10.0.102
     working_dir: /var/www/
     volumes:
@@ -54,10 +54,10 @@ services:
       APACHE_RUN_DIR: /var/run/apache2
       APACHE_LOCK_DIR: /var/lock/apache2
       APACHE_LOG_DIR: /var/log/apache2
-      APP_DOMAIN: pfm-app
-      APP_DOC_ROOT: /var/www/public
-      APACHE_SERVERNAME: pfm-server
-      FPM_ALIAS: fpm
+      APP_DOMAIN: ${APP_DOMAIN}
+      APP_DOC_ROOT: ${APP_DOC_ROOT}
+      APACHE_SERVERNAME: ${APACHE_SERVERNAME}
+      FPM_ALIAS: ${FPM_ALIAS}
     ports:
       - 80:80
       - 443:443
