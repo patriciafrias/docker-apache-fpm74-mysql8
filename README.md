@@ -1,2 +1,2 @@
 # Docker · Apache · PHP-FPM · MySQL
-Generic development environment based on Docker Compose with containers for Apache, PHP-FPM, MySQL.
+Dockerized Generic development environment PHP-FPM (v7.4), MySQL (v8.0).
