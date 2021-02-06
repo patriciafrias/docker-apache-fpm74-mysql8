@@ -46,3 +46,10 @@ RUN docker-php-ext-enable \
 COPY ./xdebug.ini /tmp/
 RUN cat /tmp/xdebug.ini >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && rm -f /tmp/xdebug.ini
+
+# Install composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php \
+#    && php composer-setup.php --install-dir=$WORKDIR \
+    && mv composer.phar /usr/local/bin/composer \
+    && php -r "unlink('composer-setup.php');"
