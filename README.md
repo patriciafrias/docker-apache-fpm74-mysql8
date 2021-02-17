@@ -1,10 +1,18 @@
 # Docker · Apache · PHP-FPM · MySQL
+
 Dockerized Generic development environment with Apache, PHP-FPM (v7.4), MySQL (v8.0).
 
-1) Run docker-compose up 
+// Customize your docker compose env vars
+- cp docker-compose.override.yml.dist docker-compose.override.yml
 
-2) cp docker-compose.override.yml.dist docker-compose.override.yml
+// Start the containers
+- docker-compose up 
 
+// Initialize composer
+- docker-compose exec php-fpm composer init
+
+// Install dependencies
+- docker-compose exec php-fpm composer install
 
 
 
