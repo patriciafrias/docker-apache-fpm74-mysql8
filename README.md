@@ -14,5 +14,9 @@ Dockerized Generic development environment with Apache, PHP-FPM (v7.4), MySQL (v
 // Install dependencies
 - docker-compose exec php-fpm composer install
 
+// Test MySQL server connection
+- docker-compose exec mysql mysql -uroot -ppfm
+
+// 
 
 
